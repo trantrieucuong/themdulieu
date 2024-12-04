@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{web/layout/layout :: layout(~{:: title}, ~{:: #css}, ~{:: #main-content}, ~{:: #js})}">
+<head>
+    <title>Bảo hành</title>
+
+    <th:block id="css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+              integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+              crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+              integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+              crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+<!--        <link rel="stylesheet" th:href="@{/static/web/css/bao-hanh.css}">-->
+
+        <style>
+            /*css cho phần bảo hành*/
+
+            .accordion {
+                width: 80%;
+                max-width: 800px;
+                margin: 20px auto;
+                font-family: Arial, sans-serif;
+            }
+
+            .accordion-item {
+                border-top: 1px solid #ddd;
+            }
+
+            .accordion-header {
+                width: 100%;
+                padding: 15px;
+                font-size: 18px;
+                text-align: left;
+                display: flex;
+                justify-content: space-between;
+                background-color: #f1f1f1;
+                border: none;
+                cursor: pointer;
+                outline: none;
+                transition: background-color 0.3s ease;
+            }
+
+            .accordion-header:hover {
+                background-color: #e0e0e0;
+            }
+
+            .accordion-icon {
+                font-size: 14px;
+                transition: transform 0.3s ease;
+            }
+
+            .accordion-content {
+                display: none;
+                padding: 15px;
+                background-color: #ffffff;
+                text-align: left;
+                border-top: 1px solid #ddd;
+            }
+
+            .accordion-item.active .accordion-content {
+                display: block;
+            }
+
+            .accordion-item.active .accordion-icon {
+                transform: rotate(180deg);
+            }
+            img{
+                width: 60px;
+                height: 60px;
+            }
+        </style>
+</head>
+
+<body>
+<th:block id="main-content">
+    <div class="accordion">
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Chính sách bảo hành</span>
+                <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <h3>QUY TRÌNH BẢO HÀNH VJO</h3>
+                <p><strong>Bước 1:</strong> Khách hàng trực tiếp mang sản phẩm cần bảo hành tới các trung tâm bảo hành VJO trên toàn quốc. Đối với khách ở xa, vui lòng liên hệ trước với bộ phận kỹ thuật VJO qua hotline: 0813.660.666</p>
+                <p><strong>Bước 2:</strong> VJO tiếp nhận bảo hành, thời gian kiểm tra từ 3 – 5 ngày kể từ ngày tiếp nhận sản phẩm.</p>
+                <p><strong>Bước 3:</strong> Sau khi kiểm tra, VJO sẽ thông báo lại khách hàng tình trạng hỏng.</p>
+                <ul>
+                    <li>Trường hợp lỗi do nhà sản xuất: VJO tiếp nhận sản phẩm, thời gian giải quyết từ 14-20 ngày.</li>
+                    <li>Trường hợp lỗi do người dùng: VJO sẽ cho ý kiến việc sửa chữa, đồng thời tư vấn và báo giá linh kiện cho khách hàng.
+                        <ul>
+                            <li>Khách hàng không đồng ý: VJO sẽ gửi trả lại thiết bị cho khách hàng</li>
+                            <li>VJO gọi điện xác nhận khi đã sửa xong.</li>
+                            <li>VJO kiểm tra, test thiết bị lần cuối để đảm bảo không có bất cứ sai sót nào trước khi giao tới khách hang.</li>
+                            <li>Thời gian giải quyết phụ thuộc vào tình trạng lỗi của sản phẩm.</li>
+
+                        </ul>
+                    </li>
+                </ul>
+                <h3>QUY TRÌNH BẢO HÀNH DJI</h3>
+                <strong>  A. Điều kiện bảo hành</strong><br>
+                <ul>
+                    <li>Là sản phẩm được phân phối bởi VJO, bảo hành áp dụng 03 tháng đối với pin và phụ kiện, 12 tháng đối với các sản phẩm camera hành động, gimbal, các thiết bị chống rung…</li>
+                    <li>Sản phẩm vẫn trong thời hạn bảo hành, được sử dụng bình thường, đúng theo hướng dẫn của nhà sản xuất. </li>
+                    <li>Sản phẩm còn nguyên vẹn, không có dấu hiệu của sự sửa chữa, mở niêm phong, va đập hoặc thay đổi linh kiện.</li>
+                    <li>Số serial sản phẩm phải trùng khớp với số serial trong biên bản mua hàng hoặc có trên hệ thống bảo hành VJO, tem nhãn còn nguyên vẹn, không thấm nước, không có dấu hiệu của sự thay đổi.</li>  
+
+                    <li>Có biên nhận mua hàng hoặc bảo hành điện tử hợp lệ từ VJO.</li>
+                    <li>Việc bảo hành không bao gồm vỏ thùng và các phụ kiện đi kèm với sản phẩm.</li>
+                    <li>Trường hợp sản phẩm không thuộc điều kiện bảo hành, VJO sẽ tư vấn các phương án thay thế sửa chữa cho khách hàng, đảm bảo chất lượng với giá cả  
+                        hợp lý.</li>
+
+                </ul>
+                <strong>B. Sản phẩm không được bảo hành</strong>
+                <ul>
+                    <li>Sản phẩm hư hỏng do hỏa hoạn, thiên tai hoặc do động vật gây ra.</li>
+                    <li>Sản phẩm đã hết hạn bảo hành.</li>
+                    <li>Sản phẩm không được phân phối bởi hệ thống VJO.</li>
+                    <li>Sản phẩm có dấu hiệu rơi vỡ, dấu hiệu va chạm mạnh, nước hoặc hóa chất rơi vào sản phẩm khiến bị ẩm, chập cháy.</li>
+                    <li>Sản phẩm đã thay đổi linh kiện, có dấu hiệu tháo mở, rách tem, serial không có trên hệ thống bảo hành, có tác động kĩ thuật trong quá trình sử dụng.</li>
+                </ul>
+
+                <strong>C. Giao nhận sản phẩm</strong>
+                <ul>
+                    <li>Khách hàng giao và nhận sản phẩm tại trung tâm bảo hành của VJO gần nhất (địa chỉ vui lòng tham khảo tại mục: Bảo hành -> Hỗ trợ bảo hành DJI -> Địa điểm bảo hành).</li>  
+
+                    <li>Khách hàng sẽ chịu tất cả các chi phí vận chuyển và chi phí phát sinh khác (nếu có).</li>
+                    <li>Trường hợp sản phẩm có lỗi do nhà sản xuất, VJO sẽ chịu toàn bộ chi phí vận chuyển, sửa chữa và đổi trả.</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</th:block>
+<th:block id="js">
+    <script>
+        // Accordion JavaScript
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', function () {
+                const accordionItem = this.parentElement;
+                accordionItem.classList.toggle('active');
+            });
+        });
+    </script>
+</th:block>
+</body>
+
+</html>
